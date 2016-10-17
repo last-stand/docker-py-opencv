@@ -1,3 +1,2 @@
 #!/bin/bash
-
-docker run -v $PWD:/app -v /tmp:/tmp py-opencv bin/venv python faceDetect.py
+docker run --name pyocv -v $PWD:/app -v /tmp:/tmp ocv bin/venv python faceDetect.py
