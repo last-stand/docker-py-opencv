@@ -1,11 +1,9 @@
 import cv2
 import sys
 import uuid
+import os
 
-if sys.argv[1:]:
-    cascPath = sys.argv[1]
-else:
-    cascPath ='/usr/local/Cellar/opencv3/HEAD-9c90a5f_4/share/OpenCV/haarcascades/haarcascade_frontalface_default.xml'
+cascPath = os.path.abspath("haarcascade_frontalface_default.xml")
 faceCascade = cv2.CascadeClassifier(cascPath)
 video_capture = cv2.VideoCapture(0)
 
