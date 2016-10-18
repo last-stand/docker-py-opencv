@@ -6,49 +6,38 @@ Docker for Python-Opencv based on Debian sid
 ### Linux Package::  
  - python (2.7)  
  - python-pip  
- - python-virtualenv
  - python-opencv
  - python-matplotlib
- 
+
 ### Usage
-1. Update your python packages into `requirments.txt`
-2. Edit virtualenv path in `bin/venv` (e.g. ENVPATH=vir-env) default is `/tmp/env`
-3. Build Docker images
+1. Build Docker images
 
 ```sh
-$ sudo docker build -t <image_name> <Dockerfile>
+$ docker-compose build
 ```
-4. Run docker with mount your directory into /app into docker container
+2. Create and run docker container from build image,
 
 ```sh
-$ sudo docker run -v <volume>:/app -v /tmp:/tmp <image_name> bin/venv <command>
+$ docker-compose up
 ```
+3. Run `docker-machine ip` to get your docker-machine ip.
+
+4. Go to your browser and run **http://<docker_machine_ip>:8000/** to see whether server is working or not.
 
 #### Example
 - Files structure
 
 ```sh
 $ ls
-app
+docker-py-opencv
 $ tree
-app
-├── bin
-│   └── venv
+docker-py-opencv
+├── cv_api
+│   └── cv_api
+│   └── face_detector
+│   └── manage.py
 ├── Dockerfile
-├── main.py
+├── docker-compose.yml
 ├── README.md
 └── requirements.txt
 ```
-
-- Commands
-
-```sh
-$ sudo docker build -t py-opencv app
-$ sudo docker run -v $PWD/app:/app -v /tmp:/tmp py-opencv bin/venv python main.py
-```
-
-### Refereneces::
-1. [Python runtime Dockerfile](https://registry.hub.docker.com/u/dockerfile/python-runtime/)
-2. [jenkins-docker-sample](https://github.com/orangain/jenkins-docker-sample)
-3. [Activating a virtualenv in supervisord](http://mindtrove.info/til-virtualenv-supervisord/)
-4. [Managing Data in Containers](https://docs.docker.com/userguide/dockervolumes/)

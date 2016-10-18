@@ -1,0 +1,9 @@
+version: '2'
+services:
+   pyocv:
+     build: .
+     command: bash -c "sh install.sh && python ./cv_api/manage.py runserver 0.0.0.0:8000"
+     volumes:
+       - .:/app
+     ports:
+       - "8000:8000"

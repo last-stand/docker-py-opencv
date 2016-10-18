@@ -1,2 +1,8 @@
 vir-env
 *.png
+cv_api/images
+cv_api/cv_api/*.pyc
+cv_api/cv_api/__pycache__/*.pyc
+cv_api/db.sqlite3
+cv_api/face_detector/*.pyc
+cv_api/face_detector/__pycache__/*.pyc
