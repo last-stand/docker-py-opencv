@@ -22,7 +22,7 @@ $ docker-compose up
 ```
 3. Run `docker-machine ip` to get your docker-machine ip.
 
-4. Go to your browser and run **http://<docker_machine_ip>:8000/** to see whether server is working or not.
+4. Go to your browser and run **http://docker_machine_ip:8000/** to see whether server is working or not.
 
 #### Example
 - Files structure
