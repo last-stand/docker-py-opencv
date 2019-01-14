@@ -21,7 +21,7 @@ Docker for Python-Opencv based on Debian sid
 1. Go to [https://hub.docker.com/r/jaiprak/pyocv/](https://hub.docker.com/r/jaiprak/pyocv/) and pull the docker image.
 
 	```sh
-	$ docker pull jaiprak/pyocv
+	$ docker pull jaiprak/pyocv:version1.0
 	```
 2. Create and run docker container from build image,
 
